@@ -91,7 +91,7 @@ public class ArrayLinearListTest {
 		Assert.assertEquals(2, item1);
 		Assert.assertEquals(4, integerList.size());
 		Assert.assertEquals(3, integerList.getValue(2).intValue());
-		/** 编辑参数测试 */
+		/** 边界参数测试 */
 		int item2 = integerList.delete(0);
 		Assert.assertEquals(0, item2);
 		int item3 = integerList.delete(2);
@@ -164,5 +164,13 @@ public class ArrayLinearListTest {
 			Assert.assertEquals(i, v);
 			i++;
 		}
+	}
+	
+	@Test
+	public void resizeTest() {
+		integerList.append(0);
+		integerList.append(1);
+		int i = integerList.delete(1);
+		Assert.assertEquals(1, i);
 	}
 }

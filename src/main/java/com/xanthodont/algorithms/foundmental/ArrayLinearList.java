@@ -42,7 +42,7 @@ public class ArrayLinearList<Item> implements ILinearList<Item>{
 		if (i < 0 || i > n) 
 			throw new IllegalArgumentException("参数i非法");
 		if (n >= items.length) resize(items.length*2);
-		for (int k = n-1; k > i; k--) {
+		for (int k = n-1; k >= i; k--) {
 			items[k+1] = items[k]; 
 		}
 		items[i] = item;
@@ -59,8 +59,8 @@ public class ArrayLinearList<Item> implements ILinearList<Item>{
 		if (i < 0 || i >= n) 
 			throw new IllegalArgumentException("参数i非法");
 		Item item = items[i]; 
-		for (int k = i; k < n; k++) {
-			items[k] = items[k+1];
+		for (int k = i+1; k < n; k++) {
+			items[k-1] = items[k];
 		}
 		n--;
 		if (n <= items.length/4) resize(items.length/2);
