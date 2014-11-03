@@ -98,6 +98,29 @@ public class ArrayLinearList<Item> implements ILinearList<Item>{
 
 	public Iterator<Item> iterator() {
 		// TODO Auto-generated method stub
-		return null;
+		return new ListIterator();
+	}
+	
+	private class ListIterator implements Iterator{
+		private int i = 0;
+		
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return i < n;
+		}
+
+		@Override
+		public Object next() {
+			// TODO Auto-generated method stub
+			return items[i++];
+		}
+
+		@Override
+		public void remove() {
+			// TODO Auto-generated method stub
+			throw new UnsupportedOperationException();
+		}
+		
 	}
 }
