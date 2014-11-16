@@ -67,20 +67,21 @@ public class Bag<Item> implements Iterable<Item>{
 	}
 
 	private class ListIterator<Item> implements Iterator<Item> {
+		private int i = 0;
 
 		public boolean hasNext() {
 			// TODO Auto-generated method stub
-			return false;
+			return i < size;
 		}
 
 		public Item next() {
 			// TODO Auto-generated method stub
-			return null;
+			return (Item) items[i++];
 		}
 
 		public void remove() {
 			// TODO Auto-generated method stub
-			
+			throw new UnsupportedOperationException("unsupport");
 		}
 		
 	} 
